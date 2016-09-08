@@ -13,8 +13,14 @@
 
 	<h1 class="rodtext">Den är en frågesport om hästar och hundar</h1>
 	{% for quiz in quizzes %}
-	<p>{{ quiz.name }}</p>
+	<p><a href="{% url 'quiz_page' quiz.quiz_number %}
+">
+       {{ quiz.name }}
+    </a></p>
 	{% endfor %}
+	
+    
+
 
 
 	<div class="container">
@@ -22,14 +28,14 @@
 			<div class="col-md-4"><h2>Frågesport nr 1 handlar om katter</h2></div>
 			<div class="col-md-4"><a href="http://google.se">klicka här</a></div>
 		</div>
-		
+
 		<div class="row">
 			<div class="col-md-4"><h2>Frågesport nr 2 handlar om hästar</h2></div>
 			<div class="col-md-4"><a href:"http://google.se">klicka här</a></div>
 		</div>
 	</div>
 
-	
+
 	<script src="ja/bootstrap.min.js"></script>
 
 

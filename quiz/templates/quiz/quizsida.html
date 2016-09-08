@@ -12,7 +12,13 @@
 <body>
 <h1 class="rodtext">{{ quiz.name }}</h1>
 <p>{{quiz.description}}</p>
-<a href="frågor.html">Starta quizet</a>
+
+{{ quiz.name }}
+    </a></p>
+
+
+
+<a href="{% url 'question_page' quiz_number 1 %}">starta</a>
 
 			
 <script src="ja/bootstrap.min.js"></script>
