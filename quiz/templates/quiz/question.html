@@ -14,7 +14,8 @@
 <h1>{{ question_number }}. {{ question }}</h1>
     
 
-<form action="{% url 'result_page' quiz_number %}"> 
+ <form action="{% url "answer_page" quiz.quiz_number question_number %}" method="post">
+
 
 <ol>
 <li><p>{{ answer1 }}</p><input type="radio" value="1"></li>
