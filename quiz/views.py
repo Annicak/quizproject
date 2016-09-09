@@ -4,16 +4,17 @@ from quiz.models import Quiz
 
 def startpage(request):
 	context={
-		"quizzes":quizzes.objects.all(),
+		"quizzes": Quiz.objects.all(),
 	}
 
 	return render(request,"quiz/startsida.html",context)
 def quiz(request, quiz_number):
-    context = {
-        "quiz": quizzes[int(quiz_number) - 1],
-        "quiz_number": quiz_number,
-    }
-    return render(request, "quiz/quizsida.html", context)
+	context = {
+		"quiz": Quiz.objects.get(quiz_number=quiz_number),
+		"quiz_number": quiz_number,
+	}
+
+	return render(request, "quiz/quizsida.html", context)
 
 
 def question(request, quiz_number, question_number):
