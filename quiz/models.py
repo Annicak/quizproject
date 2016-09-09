@@ -1,8 +1,12 @@
 from django.db import models
 class Quiz(models.Model):
+	quiz_number = models.PositiveIntegerField()
+	description = models.TextField()
+
 	name = models.CharField(max_length=100)
 	def __str__(self):
 		return self.name
+
 
 class Question(models.Model):
 	question = models.TextField()
