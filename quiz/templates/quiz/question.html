@@ -14,13 +14,17 @@
 <h1>{{ question_number }}. {{ question }}</h1>
     
 
- <form action="{% url "answer_page" quiz.quiz_number question_number %}" method="post">
+<form action="{% url "answer_page" quiz.quiz_number question_number %}" method="post"
+{% csrf_token %}
+>
 
 
 <ol>
 <li><p>{{ answer1 }}</p><input type="radio" value="1"></li>
 <li><p>{{ answer2 }}</p><input type="radio" value="2"  ></li>
 <li><p>{{ answer3 }}</p><input type="radio" value="3"></li>
+<button type="submit">Nästa</button>
+
 
 <input type="submit" value ="skicka">
 
